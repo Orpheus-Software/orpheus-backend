@@ -1,3 +1,4 @@
+require('dotenv').config({ path: '../.env' });
 const express = require('express');
 const parser = require('body-parser');
 const helmet = require('helmet');
