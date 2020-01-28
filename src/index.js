@@ -15,4 +15,4 @@ app.get('/', (req,res) => {
 
 require('./controllers/auth-controller')(app);      // repassa o objeto 'app' para o controller
 
-app.use(3031); 
+app.listen(3031); 
