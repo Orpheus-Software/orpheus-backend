@@ -1,12 +1,17 @@
 const express = require('express');
 
+import emailController from './email-controller';
 const User = require('../models/User');
 
 const router = express.Router();
 
 router.post('/register', async (req,res) => {
     try{
+        const {name, email} = req.body;
+
         const user = await User.create(req.body);
+
+        emailController.welcomeEmail(name, email);
 
         return res.send({ user });
 
